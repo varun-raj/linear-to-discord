@@ -1,8 +1,8 @@
-import { IIssueFields } from "@/@types";
+import type { IIssueFields } from '@/@types';
 
 export const UPDATABLE_FIELDS: {
-  key: IIssueFields,
-  label: string,
+  key: IIssueFields;
+  label: string;
 }[] = [
   { key: 'title', label: 'Title' },
   { key: 'description', label: 'Description' },
@@ -19,4 +19,4 @@ export const UPDATABLE_FIELDS: {
 
 export const ERRORS = {
   UNKNOWN_ACTION: 'UNKNOWN_ACTION',
-}
+};

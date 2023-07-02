@@ -1,13 +1,24 @@
 export interface ILinearData<T> {
-  action: "create" | "update"
+  action: 'create' | 'update';
   createdAt: Date;
   data: T;
   url: string;
-  type: "Issue" | "Comment"
+  type: 'Issue' | 'Comment';
   organizationId: string;
   webhookTimestamp: number;
 }
-export type IIssueFields = "title" | "description" | "priority" | "stateId" | "teamId" | 'labelIds' | "assigneeId" | "parentIssueId" | "startDate" | "dueDate" | "estimate"
+export type IIssueFields =
+  | 'title'
+  | 'description'
+  | 'priority'
+  | 'stateId'
+  | 'teamId'
+  | 'labelIds'
+  | 'assigneeId'
+  | 'parentIssueId'
+  | 'startDate'
+  | 'dueDate'
+  | 'estimate';
 
 export interface ILinearUpdateData<T> extends ILinearData<T> {
   updatedFrom?: IUpdatedFrom & { [key in IIssueFields]: string };
@@ -83,6 +94,5 @@ export interface IUpdatedFrom {
   sortOrder: number;
   completedAt: null;
   stateId: string;
-  labelIds: string[]
-} 
-
+  labelIds: string[];
+}
